@@ -65,21 +65,6 @@ local config = {
   --   return local_vim
   -- end,
 
-  -- Set dashboard header
-header = {
-  " █████  ███████ ████████ ██████   ██████",
-  "██   ██ ██         ██    ██   ██ ██    ██",
-  "███████ ███████    ██    ██████  ██    ██",
-  "██   ██      ██    ██    ██   ██ ██    ██",
-  "██   ██ ███████    ██    ██   ██  ██████",
-  " ",
-  "      ██████  ██████  ██       ██",
-  "         ██  ██    ██ ██       ██",
-  "        ██   ██    ██ ██       ██",
-  "       ██    ██    ██ ██       ██",
-  "      ██████  ██████  ████████ ██",
-},
-
   -- -- Default theme configuration
   -- default_theme = {
   --   -- Modify the color palette for the default theme
@@ -89,7 +74,30 @@ header = {
   --   },
   --   -- enable or disable highlighting for extra plugins
    plugins = {
-    { "mfussenegger/nvim-dap", enabled = true }
+    { "mfussenegger/nvim-dap", enabled = true },
+    {
+      "goolord/alpha-nvim",
+      opts = function(_, opts) -- override the options using lazy.nvim
+        opts.section.header.val = { -- change the header section value
+          " █████  ███████ ████████ ██████   ██████",
+          "██   ██ ██         ██    ██   ██ ██    ██            *    _",
+          "███████ ███████    ██    ██████  ██    ██       |        ((",
+          "██   ██      ██    ██    ██   ██ ██    ██      / \\    .   `   *",
+          "██   ██ ███████    ██    ██   ██  ██████       |o|         *", 
+          "                                               |o|",
+          "██████  ██████  ██      ██                    /| |\\",
+          "   ██  ██    ██ ██      ██                   /_| |_\\",
+          "  ██   ██    ██ ██      ██                     /|\\",
+          " ██    ██    ██ ██      ██                     V V",
+          "██████  ██████  ███████ ██  ██ ██ ██          . *",
+          "                                            . *",
+          "                                          . *.",
+          "                                .          *",
+          "                `         .   `      .   *"
+        },
+        opts.section.header.colo
+      end,
+    },
   --     aerial = true,
   --     beacon = false,
   --     bufferline = true,
@@ -107,7 +115,6 @@ header = {
   --     telescope = true,
   --     vimwiki = false,
   --     ["which-key"] = true,
-  --   },
   },
   --
   -- -- Diagnostics configuration (for vim.diagnostics.config({...}))
