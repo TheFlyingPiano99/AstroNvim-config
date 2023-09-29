@@ -100,6 +100,26 @@ local config = {
         opts.section.header.colo
       end,
     },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      opts = {
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            show_hidden_count = true,
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_by_name = {
+              -- '.git',
+              -- '.DS_Store',
+              -- 'thumbs.db',
+            },
+            never_show = {},
+          },
+        },
+      },    
+    },
+    
   --     aerial = true,
   --     beacon = false,
   --     bufferline = true,
@@ -224,9 +244,6 @@ local config = {
 --       }
 --       return config -- return final config table to use in require("null-ls").setup(config)
 --     end,
---     treesitter = { -- overrides `require("treesitter").setup(...)`
---       ensure_installed = { "lua" },
---     },
 --     -- use mason-lspconfig to configure LSP installations
 --     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
 --       ensure_installed = { "sumneko_lua" },
