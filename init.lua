@@ -74,6 +74,7 @@ local config = {
   --   },
   --   -- enable or disable highlighting for extra plugins
    plugins = {
+    { 'nvim-telescope/telescope-fzf-native.nvim', enabled = true, build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
     { "mfussenegger/nvim-dap", enabled = true },
     {
       "goolord/alpha-nvim",
