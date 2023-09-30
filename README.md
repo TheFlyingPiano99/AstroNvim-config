@@ -1,3 +1,4 @@
 # AstroNvim-config
 Config file for AstroNvim code editor.
-Put this file under ~/nvim/lua/user/
+On Windows put this file under ~/AppData/Local/nvim/lua/user/
+Or on Linux under ~/.config/nvim/lua/user/
